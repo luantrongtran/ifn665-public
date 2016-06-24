@@ -1,0 +1,178 @@
+#toolbar {
+    width: 100%;
+    height: 66px;
+    background-color: #f2f2f2;
+    margin-top: 10px;
+    padding: 2px;
+
+    overflow-x: scroll;
+    min-width: 750px;
+}
+
+#drawing_shape {
+    width: 200px;
+}
+
+#toolbar_stroke_width_selector{
+    width: 150px;
+}
+
+#strokeWidthIndicator {
+    width: 150px;/*should be the same with #toolbar_stroke_width_selector*/
+    margin-top: 3px;
+    border-top: 5px solid black;
+    margin-left: 4px;
+}
+
+.drawing_tool_btn {
+    height: 30px;
+    width: 30px;
+
+    background-color: transparent;
+    background-size: cover;
+    padding: 1px;
+}
+
+.drawing_tool_btn:hover {
+    background-color: #F2F2F2;
+}
+
+.drawing_tool_btn.selected {
+    background-color: #CCCCCC;
+}
+
+.drawing_tool_btn:focus {
+    outline: none;
+}
+
+#toolbar_ellipse {
+    background-image: url("../images/ellipse_tool.png");
+}
+
+#toolbar_rectangle {
+    background-image: url("../images/rectangle_tool.png");
+}
+
+#toolbar_line {
+    background-image: url("../images/line_tool.png");
+}
+
+#toolbar_text {
+    background-image: url("../images/text_tool.png");
+}
+
+#toolbar_pencil {
+    background-image: url("../images/pencil_tool.png");
+}
+
+/*Color picker*/
+#color_picker {
+    /*width: 50%;*/
+    vertical-align: top;
+}
+
+#color_palette {
+    vertical-align: top;
+    background-color: transparent;
+}
+
+#color_palette > .row > .column {
+    color: red;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#color_palette > .row > .column:nth-child(1) {
+    border-left: 1px solid black;
+}
+
+#color_palette > .row:nth-child(1) > .column {
+    border-top: 1px solid black;
+}
+
+.custom_color_btn {
+    opacity: 0;
+    border: none;
+    padding: 0;
+
+    width: 20px;
+    height: 20px;
+
+    /*not display at beginning*/
+    display: none;
+}
+
+#page3_selected_color_wrapper {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    text-align: center;
+
+    border: 1px solid black;
+    border-left: 0;
+}
+#page3_selected_color {
+    margin: auto;
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+
+    background-color: green;
+}
+
+/*update board size*/
+#update_board_size {
+    vertical-align: top;
+}
+
+#update_board_size .column {
+    padding-right: 12px;
+}
+
+#page3_btn_update_canvas_size {
+    margin-top: 3px;
+}
+
+/*font settings*/
+#page3_canvas_font_settings {
+    vertical-align: top;
+}
+
+#page3_canvas_text_size {
+    width: 40px;
+}
+
+.font_btn {
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+
+    padding: 2px;
+    background-color: transparent;
+}
+
+.font_btn.selected {
+    background-color: #CCCCCC;
+}
+
+.font_btn:focus {
+    outline: none;
+}
+
+#page3_font_bold {
+    background-image: url("../images/bold_font.png");
+}
+
+#page3_font_italic {
+    background-image: url("../images/italic_font.png");
+    margin-left: 5px;
+}
+
+#page3_font_underline {
+    margin-left: 5px;
+    background-image: url("../images/underline_font.png");
+}

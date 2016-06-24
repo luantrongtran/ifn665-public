@@ -1,0 +1,49 @@
+/*Input type=text without border class*/
+.no-border-text-input {
+    border: 0;
+    border-bottom: 1px solid black;
+    background: var(--background-color);
+
+    font-size: 20px;
+    color: var(--input-placholder-color);
+    text-align: center;
+    margin: 5px;
+}
+
+.no-border-text-input:focus {
+    outline: none;
+}
+
+.no-border-text-input::-webkit-input-placeholder {
+    color: var(--input-placholder-color);
+}
+
+.no-border-text-input:-moz-placeholder { /* Firefox 18- */
+    color: var(--input-placholder-color);
+}
+
+.no-border-text-input::-moz-placeholder {  /* Firefox 19+ */
+    color: var(--input-placholder-color);
+}
+
+.no-border-text-input:-ms-input-placeholder {
+    color: var(--input-placholder-color);
+}
+
+/*Button without border class*/
+.no-border-button {
+    border: 0;
+    background-color: Transparent;
+    color:  #1a1aff;
+    font-size: 20px;
+    margin: 5px;
+
+}
+
+.no-border-button:hover {
+    text-decoration: underline;
+}
+
+.no-border-button:focus {
+    outline: none;
+}

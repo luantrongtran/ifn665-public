@@ -1,0 +1,12 @@
+.table {
+    display: table;
+    padding: 0;
+}
+
+.column {
+    display: table-cell;
+}
+
+.row {
+    display: table-row;
+}

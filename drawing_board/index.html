@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>IFN665 - Advanced Topic 1</title>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/control_styles.css">
+    <link rel="stylesheet" type="text/css" href="css/drawing_toolbar.css">
+    <link rel="stylesheet" type="text/css" href="css/div_table.css">
+
+</head>
+<body>
+
+    <!--Page #1-->
+    <div id="page1">
+        <h1>Welcome to Joint Board</h1>
+        <h2>Sharing HTML5 Canvas using WebRTC (Web Real-Time Communication)</h2>
+        <input class="no-border-text-input" id="page1_username" type="text" placeholder="enter your name">
+        <br>
+        <button class="no-border-button" id="page1_btnNext">Next</button>
+    </div>
+
+    <div id="page2">
+        <h1>Thanks for using the application</h1>
+        <h3>You may create your new board and invite your friends.</h3>
+        <h3>Or, you can join your friends' board.</h3>
+        <h3>You need to know the board ID of you friend if you want to join it.</h3>
+
+        <input class="no-border-text-input" id="page2_board_id" type="text" placeholder="Enter board id">
+        <b id="page2_err_msg" class="error-msg">Enter board ID</b>
+        <br>
+        <button class="no-border-button" id="page2_btnCreate">Create canvas</button>
+        <button class="no-border-button" id="page2_btnJoin">Join</button>
+    </div>
+
+    <div id="page3">
+
+        <h2 id="page3_header"></h2>
+        <div id = "drawing_section">
+            <div id="canvas_wrapper">
+                <canvas id="canvas"></canvas>
+            </div>
+
+            <div id="toolbar" class="table">
+                <div id="drawing_shape" class="column">
+                    <button class="drawing_tool_btn" id="toolbar_ellipse"></button>
+                    <button class="drawing_tool_btn" id="toolbar_rectangle"></button>
+                    <button class="drawing_tool_btn" id="toolbar_line"></button>
+                    <button class="drawing_tool_btn" id="toolbar_text"></button>
+                    <button class="drawing_tool_btn" id="toolbar_pencil"></button>
+
+                    <input type="range" min="1" max="5" value="1" id="toolbar_stroke_width_selector">
+                    <div id="strokeWidthIndicator"></div>
+                </div>
+
+                <div class="column" id="color_picker">
+                    <div class="table">
+                        <div class="row">
+                            <div class="column" id="color_palette" style="background-color: transparent">
+                                <div class="row">
+                                    <div class="column">
+                                        <input class="custom_color_btn" type="color">
+                                    </div>
+                                    <div class="column">
+                                        <input class="custom_color_btn" type="color">
+                                    </div>
+                                    <div class="column">
+                                        <input class="custom_color_btn" type="color">
+                                    </div>
+                                    <div class="column">
+                                        <input class="custom_color_btn" type="color">
+                                    </div>
+                                    <div class="column">
+                                        <input class="custom_color_btn" type="color">
+                                    </div>
+                                    <div class="column">
+                                        <input class="custom_color_btn" type="color">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="column">
+                                        <input class="custom_color_btn" type="color">
+                                    </div>
+                                    <div class="column">
+                                        <input class="custom_color_btn" type="color">
+                                    </div>
+                                    <div class="column">
+                                        <input class="custom_color_btn" type="color">
+                                    </div>
+                                    <div class="column">
+                                        <input class="custom_color_btn" type="color">
+                                    </div>
+                                    <div class="column">
+                                        <input class="custom_color_btn" type="color">
+                                    </div>
+                                    <div class="column">
+                                        <input class="custom_color_btn" type="color">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="column" id="page3_selected_color_wrapper">
+                                <div id="page3_selected_color">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="edit_custom_colors" style="margin-top: 5px;">Edit color palette</button>
+                    <button id="done_custom_colors" style="display: none;margin-top: 5px;">done</button>
+                </div>
+
+                <div class="column" id="page3_canvas_font_settings">
+                    <div class="table">
+                        <div class="row">
+                            <button class="font_btn" id="page3_font_bold"></button>
+                            <button class="font_btn" id="page3_font_italic"></button>
+                            <button class="font_btn" id="page3_font_underline"></button>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <label for="page3_canvas_text_size">Font size</label>
+                            </div>
+                            <div class="column">
+                                <input id="page3_canvas_text_size" type="number" value="20">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <label for="page3_canvas_font_family">Font family</label>
+                            </div>
+                            <div class="column">
+                                <select type="text" id="page3_canvas_font_family">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column" id="update_board_size">
+                    <div class="table">
+                        <div class="row">
+                            <div class="column">
+                                <label for="page3_canvas_width">Width</label>
+                            </div>
+                            <div class="column">
+                                <input min="500" max="800" id="page3_canvas_width" type="number">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <label for="page3_canvas_height">Height</label>
+                            </div>
+                            <div class="column">
+                                <input min="500" max="800" id="page3_canvas_height" type="number">
+                            </div>
+                        </div>
+                    </div>
+                    <button id="page3_btn_update_canvas_size">Update board size</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="splitter">
+
+        </div>
+
+        <div id="chat_box">
+            <div id="chat_screen">
+
+            </div>
+
+            <input type="text" id="chat_input_message">
+
+            <button id="chat_send_button">Send</button>
+
+            <input type="color" id="text_color_picker">
+
+            <br>
+            Connecting users:
+            <br>
+            <div id="page3_userList">
+
+            </div>
+        </div>
+
+        <div id="debug">
+            selected tool: <b id="selectedTool"></b>
+            <br>
+            is drawing: <b id="isDrawing"></b>
+            <br>
+            drawing obj info: <b id="drawingObjInfo"></b>
+            <br>
+            custom info: <b id="customInfo"></b>
+        </div>
+    </div>
+
+    <script src="js/jquery-2.2.3.js" type="text/javascript"></script>
+    <script src="js/webrtc.js" type="text/javascript"></script>
+    <script src="js/fabric.min.js" type="text/javascript"></script>
+    <script src="js/drawing.js" type="text/javascript"></script>
+    <script src="js/board_guest/drawing_guest.js" type="text/javascript"></script>
+    <script src="js/board_owner/drawing_owner.js" type="text/javascript"></script>
+    <script src="js/owner_and_guests_common_functions.js" type="text/javascript"></script>
+    <script src="js/board_owner/board_owner.js" type="text/javascript"></script>
+    <script src="js/board_guest/board_guest.js" type="text/javascript"></script>
+    <script src="js/initialising.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+
+</body>
+</html>
